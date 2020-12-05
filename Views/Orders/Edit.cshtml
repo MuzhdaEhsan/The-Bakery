@@ -1,0 +1,80 @@
+﻿@model BakeryWebsite.Models.Orders
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+
+    <title>Appraise Your Textbook!</title>
+    <link rel="stylesheet" href="~/css/site.css" type="text/css" />
+
+</head>
+<body>
+    <a href="~/Home/Index" class="logo"><img src="~/images/new-logo.png" alt="" class="center"></a>
+    <nav>
+        <ul>
+            <li>
+                <a href="~/Home/Index">Home</a>
+            </li>
+            <li>
+                <a href="~/Products/Index">Products</a>
+            </li>
+            <li>
+                <a href="~/Orders/Index">Orders</a>
+            </li>
+            <li>
+                <a href="~/Clients/Index">Clients</a>
+            </li>
+            <li>
+                <a href="~/Home/About">About</a>
+            </li>
+           
+        </ul>
+    </nav>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="ordersID" />
+                <div class="form-group">
+                    <label asp-for="productID" class="control-label">Product ID</label>
+                    <input asp-for="productID" class="form-control" />
+                    <span asp-validation-for="productID" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ordQuantity" class="control-label">Quantity</label>
+                    <input asp-for="ordQuantity" class="form-control" />
+                    <span asp-validation-for="ordQuantity" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ordDate" class="control-label">Order Date</label>
+                    <input asp-for="ordDate" class="form-control" />
+                    <span asp-validation-for="ordDate" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ordDescription" class="control-label">Description</label>
+                    <input asp-for="ordDescription" class="form-control" />
+                    <span asp-validation-for="ordDescription" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Save" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <a asp-action="Index">Back to List</a>
+    </div>
+
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }
+    </body>
+</html>

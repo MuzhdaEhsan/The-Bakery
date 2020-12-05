@@ -1,0 +1,69 @@
+﻿@model BakeryWebsite.Models.Products
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+
+    <title>Appraise Your Textbook!</title>
+    <link rel="stylesheet" href="~/css/site.css" type="text/css" />
+
+</head>
+<body>
+    <a href="~/Home/Index" class="logo"><img src="~/images/new-logo.png" alt="" class="center"></a>
+    <nav>
+        <ul>
+            <li>
+                <a href="~/Home/Index">Home</a>
+            </li>
+            <li>
+                <a href="~/Products/Index">Products</a>
+            </li>
+            <li>
+                <a href="~/Orders/Index">Orders</a>
+            </li>
+            <li>
+                <a href="~/Clients/Index">Clients</a>
+            </li>
+            <li>
+                <a href="~/Home/About">About</a>
+            </li>
+           
+        </ul>
+    </nav>
+
+    <div>
+        <h4>Products</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                Product Name
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.prdName)
+            </dd>
+            <dt class="col-sm-2">
+                Product Price
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.prdPrice)
+            </dd>
+            <dt class="col-sm-2">
+                Product Description
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.prdDescription)
+            </dd>
+        </dl>
+    </div>
+    <div>
+        <a asp-action="Edit" asp-route-id="@Model.productsID">Edit</a> |
+        <a asp-action="Index">Back to List</a>
+    </div>
+    </body>
+</html>

@@ -1,0 +1,113 @@
+﻿@model IEnumerable<BakeryWebsite.Models.Clients>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+
+    <title>Appraise Your Textbook!</title>
+    <link rel="stylesheet" href="~/css/site.css" type="text/css" />
+
+</head>
+<body>
+    <a href="~/Home/Index" class="logo"><img src="~/images/new-logo.png" alt="" class="center"></a>
+    <nav>
+        <ul>
+            <li>
+                <a href="~/Home/Index">Home</a>
+            </li>
+            <li>
+                <a href="~/Products/Index">Products</a>
+            </li>
+            <li>
+                <a href="~/Orders/Index">Orders</a>
+            </li>
+            <li>
+                <a href="~/Clients/Index">Clients</a>
+            </li>
+            <li>
+                <a href="~/Home/About">About</a>
+            </li>
+            
+        </ul>
+    </nav>
+
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Order ID
+                </th>
+                <th>
+                    Name
+                </th>
+                <th>
+                    Lastname
+                </th>
+                <th>
+                    Phone Number
+                </th>
+                <th>
+                    Email
+                </th>
+                <th>
+                   Street#
+                </th>
+                <th>
+                    City
+                </th>
+                <th>
+                    Postalcode
+                </th>
+                <th>
+                    Operation
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.orderID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.clName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.clLastName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.clPhone)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.clEmail)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.clStreet)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.clCity)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.clPostalcode)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.clientsID">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.clientsID">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.clientsID">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>
+</html>

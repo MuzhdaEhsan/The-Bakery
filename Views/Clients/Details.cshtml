@@ -1,0 +1,99 @@
+﻿@model BakeryWebsite.Models.Clients
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+
+    <title>Appraise Your Textbook!</title>
+    <link rel="stylesheet" href="~/css/site.css" type="text/css" />
+
+</head>
+<body>
+    <a href="~/Home/Index" class="logo"><img src="~/images/new-logo.png" alt="" class="center"></a>
+    <nav>
+        <ul>
+            <li>
+                <a href="~/Home/Index">Home</a>
+            </li>
+            <li>
+                <a href="~/Products/Index">Products</a>
+            </li>
+            <li>
+                <a href="~/Orders/Index">Orders</a>
+            </li>
+            <li>
+                <a href="~/Clients/Index">Clients</a>
+            </li>
+            <li>
+                <a href="~/Home/About">About</a>
+            </li>
+            
+        </ul>
+    </nav>
+
+    <div>
+        <h4>Clients</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                Order ID
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.orderID)
+            </dd>
+            <dt class="col-sm-2">
+                Name
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.clName)
+            </dd>
+            <dt class="col-sm-2">
+                Lastname
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.clLastName)
+            </dd>
+            <dt class="col-sm-2">
+                Phone Number
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.clPhone)
+            </dd>
+            <dt class="col-sm-2">
+                Email
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.clEmail)
+            </dd>
+            <dt class="col-sm-2">
+                Street#
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.clStreet)
+            </dd>
+            <dt class="col-sm-2">
+                city
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.clCity)
+            </dd>
+            <dt class="col-sm-2">
+                Postalcode
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.clPostalcode)
+            </dd>
+        </dl>
+    </div>
+    <div>
+        <a asp-action="Edit" asp-route-id="@Model.clientsID">Edit</a> |
+        <a asp-action="Index">Back to List</a>
+    </div>
+    </body>
+</html>

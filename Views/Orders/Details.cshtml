@@ -1,0 +1,75 @@
+﻿@model BakeryWebsite.Models.Orders
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+
+    <title>Appraise Your Textbook!</title>
+    <link rel="stylesheet" href="~/css/site.css" type="text/css" />
+
+</head>
+<body>
+    <a href="~/Home/Index" class="logo"><img src="~/images/new-logo.png" alt="" class="center"></a>
+    <nav>
+        <ul>
+            <li>
+                <a href="~/Home/Index">Home</a>
+            </li>
+            <li>
+                <a href="~/Products/Index">Products</a>
+            </li>
+            <li>
+                <a href="~/Orders/Index">Orders</a>
+            </li>
+            <li>
+                <a href="~/Clients/Index">Clients</a>
+            </li>
+            <li>
+                <a href="~/Home/About">About</a>
+            </li>
+            
+        </ul>
+    </nav>
+
+    <div>
+        <h4>Orders</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                Product ID
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.productID)
+            </dd>
+            <dt class="col-sm-2">
+               Quantity
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.ordQuantity)
+            </dd>
+            <dt class="col-sm-2">
+                Order Date
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.ordDate)
+            </dd>
+            <dt class="col-sm-2">
+                Description
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.ordDescription)
+            </dd>
+        </dl>
+    </div>
+    <div>
+        <a asp-action="Edit" asp-route-id="@Model.ordersID">Edit</a> |
+        <a asp-action="Index">Back to List</a>
+    </div>
+</body>
+</html>

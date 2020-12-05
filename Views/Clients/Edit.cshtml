@@ -1,0 +1,100 @@
+﻿@model BakeryWebsite.Models.Clients
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+
+    <title>Appraise Your Textbook!</title>
+    <link rel="stylesheet" href="~/css/site.css" type="text/css" />
+
+</head>
+<body>
+    <a href="~/Home/Index" class="logo"><img src="~/images/new-logo.png" alt="" class="center"></a>
+    <nav>
+        <ul>
+            <li>
+                <a href="~/Home/Index">Home</a>
+            </li>
+            <li>
+                <a href="~/Products/Index">Products</a>
+            </li>
+            <li>
+                <a href="~/Orders/Index">Orders</a>
+            </li>
+            <li>
+                <a href="~/Clients/Index">Clients</a>
+            </li>
+            <li>
+                <a href="~/Home/About">About</a>
+            </li>
+           
+        </ul>
+    </nav>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="clientsID" />
+                <div class="form-group">
+                    <label asp-for="orderID" class="control-label">Order ID</label>
+                    <input asp-for="orderID" class="form-control" />
+                    <span asp-validation-for="orderID" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="clName" class="control-label">Name</label>
+                    <input asp-for="clName" class="form-control" />
+                    <span asp-validation-for="clName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="clLastName" class="control-label">Lastname</label>
+                    <input asp-for="clLastName" class="form-control" />
+                    <span asp-validation-for="clLastName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="clPhone" class="control-label">Phone Number</label>
+                    <input asp-for="clPhone" class="form-control" />
+                    <span asp-validation-for="clPhone" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="clEmail" class="control-label">Email</label>
+                    <input asp-for="clEmail" class="form-control" />
+                    <span asp-validation-for="clEmail" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="clStreet" class="control-label">Street#</label>
+                    <input asp-for="clStreet" class="form-control" />
+                    <span asp-validation-for="clStreet" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="clCity" class="control-label">City</label>
+                    <input asp-for="clCity" class="form-control" />
+                    <span asp-validation-for="clCity" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="clPostalcode" class="control-label">Postalcode</label>
+                    <input asp-for="clPostalcode" class="form-control" />
+                    <span asp-validation-for="clPostalcode" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Save" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <a asp-action="Index">Back to List</a>
+    </div>
+
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }
+    </body>
+</html>
